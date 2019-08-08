@@ -1,2 +1,2 @@
 # miniapp-freshFoodSupermarket
-fresh food supermarket miniapp
+线上销售微信小程序
