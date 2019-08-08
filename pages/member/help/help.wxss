@@ -1,0 +1,30 @@
+/*页面背景*/
+page {
+	background-color: #eee;
+}
+
+/*容器总体布局为左右两列*/
+.container {
+  width: 100%;
+	flex-direction: row;
+  background-color: #ffffff;
+  position:relative;
+  border-bottom:2rpx solid #e6e6e6;
+}
+.news{
+  width: 100%;
+  padding:30rpx 0;
+}
+.news_bt{
+  width: 76%;
+  font-size:28rpx;
+  margin-left: 40rpx;
+}
+.news_l{
+  width:80%;
+  margin: auto;
+  color:gray;
+  font-size:28rpx;
+  margin-bottom:10rpx;
+  display: none;
+}

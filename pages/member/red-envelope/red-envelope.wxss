@@ -1,0 +1,105 @@
+/* pages/member/red-envelope/red-envelope.wxss */
+page{
+  background-color: #e9e7ef;
+}
+.nav{
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  background-color: #FFF;
+  font-size: 28rpx;
+  border: 2rpx solid #E9E7EF;
+}
+.nav1{
+  width: 30%;
+  height: auto;
+  text-align: center;
+  padding: 20rpx 0 20rpx 0;
+  box-sizing: border-box;
+  color: gray;  
+}
+.nav11{
+  width: 33%;
+  height: auto;
+  text-align: center;
+  padding: 20rpx 0 20rpx 0;
+  box-sizing: border-box;
+  background-color: #23BD1B;
+  color: #FFF;
+}
+.top{
+  box-sizing:border-box;
+  width: 100%;
+  padding: 20rpx;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stamp {width: 98%;height: 200rpx;padding: 0 10px;position: relative;overflow: hidden;box-sizing: border-box;margin-bottom: 20rpx;}
+  .stamp:before {content: '';position: absolute;top:0;bottom:0;left:10px;right:10px;z-index: -1;box-sizing: border-box;}  
+
+
+.stamp03{background: #FFF;background: radial-gradient(transparent 0, transparent 5px, #FFF 5px);background-size: 15px 15px;background-position: 9px 3px;}
+.stamp03:before{background-color:#FFF;}
+
+.left{
+  width: 65%;
+  height: 100%;
+  float: left;
+  box-sizing: border-box;
+  padding: 10rpx;
+}
+.lefttitle{
+  width: 100%;
+  padding: 10rpx 0;
+}
+.lefttime{
+  width: 100%;
+  padding: 10rpx 0;
+  color: gray;
+  font-size: 28rpx;
+  
+}
+.right{
+  width: 35%;
+  height: 100%;
+  background-color: #23BD1B;
+  position: absolute; 
+  margin-left: 62.5%;
+  box-sizing: border-box; 
+  background: -webkit-linear-gradient(left, #FCBA2C , #FE982A); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, #FCBA2C, #FE982A); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, #FCBA2C, #FE982A); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, #FCBA2C , #FE982A); /* 标准的语法（必须放在最后） */
+  text-align: center;
+  color: #FFF;
+  display: flex;
+}
+.rightmoney{
+  margin: auto;
+}
+.hh{
+  display: inline-block;
+  font-size:70rpx;
+}
+.now{
+  font-size: 28rpx;
+  border-radius: 20rpx;
+  border: 2rpx solid #FFF;
+  padding: 5rpx 15rpx;
+  box-sizing: border-box;
+}
+.ed{
+  color: red;
+  font-size: 28rpx;
+  border-radius: 5rpx;
+  border: 2rpx solid red;
+  padding: 5rpx 15rpx;
+  box-sizing: border-box;
+  width: 120rpx;
+  -moz-transform:rotate(-36deg) scale(1.00,1.00) translate(0px,0px) skew(0deg,0deg);-moz-transform-origin:10% 0%;-webkit-transform:rotate(-36deg) scale(1.00,1.00) translate(0px,0px) skew(0deg,0deg);-webkit-transform-origin:10% 0%;-o-transform:rotate(-36deg) scale(1.00,1.00) translate(0px,0px) skew(0deg,0deg);-o-transform-origin:10% 0%;transform:rotate(-36deg) scale(1.00,1.00) translate(0px,0px) skew(0deg,0deg);transform-origin:10% 0%;
+  margin-left: 35%;
+}

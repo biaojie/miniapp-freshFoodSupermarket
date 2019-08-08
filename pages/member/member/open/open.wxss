@@ -1,0 +1,60 @@
+/* pages/member/member/open/open.wxss */
+page{
+  background-color: #e9e7ef;
+}
+.header{
+  width: 100%;
+  text-align: center;
+  padding: 15rpx 0;
+  background-color: #FFF;
+  border-bottom: 2rpx solid gainsboro;
+}
+.vip{
+  margin-top: 30rpx;
+  width: 100%;
+  border: 2rpx solid gainsboro;
+  background-color: #FFF;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+  font-size: 30rpx;
+}
+.vip1{
+  width: 100%;
+  padding: 15rpx 0;
+  border-bottom: 2rpx solid gainsboro;
+  box-sizing: border-box;
+}
+.vip2{
+  width: 100%;
+  padding: 15rpx 0;
+  box-sizing: border-box;
+}
+.buy{
+  width: 100%;
+  margin-top: 80rpx;
+  display: flex;
+  justify-content: center;
+}
+.sure{
+  background-color: #23BD1B;
+  border-radius: 5rpx;
+  width: 60%;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #FFF;
+  font-size: 30rpx;
+}
+button{
+  float: right;
+  margin-top: 0;
+  margin-bottom: 10rpx;
+  width: 190rpx;
+  box-sizing: border-box;
+  padding: 0;
+  font-size: 30rpx;
+  /* border: none; */
+  border:1rpx solid #e9e7ef;
+  background-color: #e9e7ef;
+  color: #23BD1B;
+}

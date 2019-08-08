@@ -1,0 +1,42 @@
+<!--pages/member/member/member.wxml-->
+<view class='backgroundimg'>
+  <view class='top'>
+      <view class='icon'><image  src="{{userInfo.avatarUrl}}" background-size="cover" style='border-radius:180rpx'></image></view>
+      <view class='icon1'><text>普通会员</text></view>
+      <view class='icon2'>账号：{{userInfo.nickName}}</view>
+      <view class='icon3'>到期时间：2999.99.99</view>      
+      <view class='icontext'>您将从价格、服务、积分、红包多个维度享受优惠</view>
+  </view>
+
+  <view class='mid'>
+    <view class='midtitle'>——　尊享特权　——</view>
+    <view class='mid2'>
+    <scroll-view scroll-x='true' style="width:100%;">
+      <view class='uploadWrap'>
+        <view class='mid2all'>
+          <view class='mid2allhead'><text>特权</text></view>
+          <view class='mid2allimg'><image src='../../../images/images/menber3.png'></image></view>
+          <view class='mid2alltitle'>专属特惠商品</view>
+          <view class='mid2allcontent'>5折起特惠商品及爆品</view>
+        </view>
+
+        <view class='mid2all'>
+          <view class='mid2allhead'><text>特权</text></view>
+          <view class='mid2allimg'><image src='../../../images/images/menber2.png'></image></view>
+          <view class='mid2alltitle'>开通送积分</view>
+          <view class='mid2allcontent'>开通会员送400积分</view>
+        </view>
+
+        <view class='mid2all'>
+          <view class='mid2allhead'><text>特权</text></view>
+          <view class='mid2allimg'><image src='../../../images/images/menber1.png'></image></view>
+          <view class='mid2alltitle'>2倍积分</view>
+          <view class='mid2allcontent'>购物可享受2倍积分</view>
+        </view>
+      </view>
+    </scroll-view>
+    </view>
+  </view>
+  
+</view>
+<view class='bottom' bindtap='open'>￥99/年开通正式会员</view>

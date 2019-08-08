@@ -1,0 +1,43 @@
+/*页面背景*/
+page {
+	background-color: #F4F4F4;
+  margin-top: 4rpx;
+
+}
+
+/*容器总体布局为左右两列*/
+.container {
+	display: flex;
+	flex-direction: row;
+  background-color: #ffffff;
+  padding-bottom:10rpx;
+}
+.news{
+  width: 94%;
+  margin: auto;
+  height: 177rpx;
+  border-bottom:2rpx solid #e6e6e6;
+  padding:40rpx 0;
+}
+.news_left{
+  width: 56%;
+  height: 177rpx;
+  float:left;
+}
+.news_bt{
+  width:100%;
+  font-size:36rpx;
+  height:130rpx;
+}
+.news_cc{
+  width:100%;
+  font-size:28rpx;
+  height:47rpx;
+  color:#999999;
+}
+
+.news_right{
+  width: 40%;
+  height:177rpx;
+  float:right;
+}

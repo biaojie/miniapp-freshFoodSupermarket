@@ -1,0 +1,125 @@
+<!--orderinfo{{cartIds}}{{amount}}-->
+
+<view class="parent">
+
+<view class="view-order" >
+<view class="view-orderstatus">
+<image src="/images/oorder1.png"></image>
+<view class="view-orderstatus-info">
+<text class="text-name">订单状态:{{orders.status}}</text>
+<text class="text-address">订单号:{{orders.order_id}}</text>
+<!-- <text class="text-address">配送费用:￥{{orders.shipping_price}}元</text> -->
+</view>
+
+</view>
+
+
+</view>
+
+
+
+<view class="view-address" style="background:#ffffff">
+<view class="view-addressleft">
+
+<image src="/images/payicon.png"></image>
+<view class="view-addressleft-info">
+<text class="text-name">所选支付方式 : 微信支付</text>
+<text class="text-address">应付款金额 : ￥{{orders.amount}}元</text>
+</view>
+</view>
+</view>
+
+
+
+<view class="view-address" style="background:#ffffff">
+<view class="view-addressleft">
+<image src="/images/icon_address.png" style='width:75rpx;'></image>
+<view class="view-addressleft-info">
+<text class="text-name">收货人:{{orders.realname}}</text>
+<text class="text-address" style='padding:0 10rpx;'>收货地址:{{orders.address}}</text>
+<text class="text-address">联系电话:{{orders.mobile}}</text>
+</view>
+
+</view>
+
+<!-- <view class="view-addressright">
+<text class="text-mobile">{{orders.mobile}}</text>
+</view> -->
+
+</view>
+
+
+<view class="view-address" style="background:#ffffff">
+<view class="view-addressleft">
+<image src="/images/wl.png"></image>
+<view class="view-addressleft-info">
+<text class="text-name">快递单号:{{orders.kd_roar}}</text>
+<text class="text-address">物流公司:{{orders.kd_name}}</text>
+</view>
+</view>
+</view>
+
+
+
+<view class="view-address1" style="background:#ffffff">
+<view class="view-addressleft">
+ <image src="/images/icon_store.png" style='width:44rpx;'></image> 
+<view class="view-addressleft-info1">
+<text class="text-address" style='padding:0 10rpx;'>备注:{{orders.remarks}}</text>
+</view>
+</view>
+</view>
+
+
+
+
+
+
+
+<view class="view-title">
+<image src="/images/icon_order.png"></image>
+<text>网站自营</text>
+</view>
+
+<view class="class-line"></view>
+
+ <view class="container carts-list">
+  <view wx:for="{{orders.orgo}}"  wx:for-item="mapping" class="carts-item" bindtap="showGoods" data-object-id="{{mapping.goods_id}}">
+
+    <view>
+      <image class="carts-image" src="{{baseUrl}}/public/uploads/{{mapping.goods.file.savepath}}{{mapping.goods.file.savename}}" mode="aspectFill" />
+    </view>
+
+    <view class="carts-text">
+      <text class="carts-title">{{mapping.name}}</text>
+      <text class="carts-key-name">{{mapping.goods.spec}}</text>
+    </view>
+    <view class="carts-right">
+      <text class="text-red">￥{{mapping.price}}</text>
+      <text class="text-price">x{{mapping.number}}</text>
+    </view>
+
+  </view>
+</view> 
+
+
+
+<view class="view-price">
+
+<view class="view-price1">
+<text class="text-price1">配送费金额:</text>
+<text class="text-red">￥{{orders.psf}}元</text>
+</view>
+
+<view class="view-price1">
+<text class="text-price1">应付总金额:</text>
+<text class="text-red">￥{{orders.amount}}元</text>
+</view>
+
+<view class="view-price1">
+<text class="text-price2" id="go_payment" wx:if="{{orders.status == '待付款'}}" bindtap="pay" data-object-id="{{orders.order_id}}" data-total-fee="{{orders.amount}}">立即支付</text>
+</view>
+
+</view>
+
+</view>

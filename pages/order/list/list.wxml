@@ -1,0 +1,45 @@
+
+ <view class="order-item" wx:for="{{orders}}" wx:key="orders">
+
+	<view wx:for="{{item.orgo}}" wx:for-item="mapping" wx:key="" class="carts-item" bindtap="showGoods" data-object-id="{{item.id}}">
+		<view style="margin-left:10rpx;">
+			<image style="border: 1px solid #eee;padding:4rpx" class="carts-image" src="{{baseUrl}}/public/uploads/{{mapping.goods.file.savepath}}{{mapping.goods.file.savename}}" mode="aspectFill"/>
+		</view>
+
+		<view class="carts-text" style="height:22px;">
+			<text class="carts-title" style="overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;flex-shrink:0;display:-webkit-box;height:36px;">{{mapping.name}}</text>
+     <text class="carts-title">单价：<text class="carts-price">{{mapping.price}}</text>数量：{{mapping.number}}</text>
+      
+		</view>
+
+	</view>
+<view style="position: absolute; left:180rpx;">
+    <view class="order-footer" style="position: relative;top:-68rpx;">
+      <!-- <text class="carts-title">联系人：{{item.realname}}</text> -->
+      <text class="carts-title">总金额{{item.amount}}</text>
+      <text wx:if="{{item.status == '已取消'}}" >{{item.status}}</text>
+    </view>
+</view>
+
+<view style="position: absolute; right:20rpx;font-size: 24rpx;">
+    <view class="order-footer" style="position: relative;top:-56rpx;">
+
+<text style="padding:6rpx 10rpx;background:#797777;color:#fff;border-radius: 12rpx;"  bindtap="dele" data-object-id="{{item.id}}" wx:if="{{item.status == '待付款'}}" data-total-fee="{{item.amount}}">取消订单</text>
+<text style="padding:6rpx 10rpx;background:#797777;color:#fff;border-radius: 12rpx;"  bindtap="hide" data-object-id="{{item.id}}" wx:if="{{item.status == '已收货'}}" data-total-fee="{{item.amount}}">删除订单</text>
+
+
+
+<text  style="padding:6rpx 10rpx;background:orangered;color:#fff;border-radius: 12rpx;" wx:if="{{item.status == '待付款'}}"  bindtap="pay" data-object-id="{{item.order_id}}" data-total-fee="{{item.amount}}">去支付</text>
+
+<text  style="padding:6rpx 10rpx;background:#fba901;color:#fff;border-radius: 12rpx;" wx:if="{{item.status == '已发货'}}"  data-object-id="{{item.order_id}}" data-total-fee="{{item.amount}}">已发货</text>
+
+<text  style="padding:6rpx 10rpx;background:#53aee1;color:#fff;border-radius: 12rpx;" wx:if="{{item.status == '已付款'}}"  data-object-id="{{item.order_id}}" data-total-fee="{{item.amount}}">待发货</text>
+
+ <text  style="padding:6rpx 10rpx;background:#00AA72;color:#fff;border-radius: 12rpx;" wx:if="{{item.status == '已收货'}}"  data-object-id="{{item.order_id}}" data-total-fee="{{item.amount}}">已完成</text> 
+    </view>
+</view>
+    <!-- <view class="order-footer" >
+    <text style="overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;flex-shrink:0;display:-webkit-box;">收货地址：{{item.address}}</text>
+	</view>    -->
+
+</view> 

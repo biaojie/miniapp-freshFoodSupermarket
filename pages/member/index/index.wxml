@@ -1,0 +1,75 @@
+<view class="userinfo">
+	<image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover" ></image>
+  <view class='v'>
+    <text class='vip'>VIP</text>
+    <text class="userinfo-nickname" >{{userInfo.nickName}}</text>
+  </view>
+</view>
+
+<view style="margin-top: 20rpx;margin-bottom: 20rpx;border-top: 2rpx solid #ddd;border-bottom: 2rpx solid #ddd;">
+<view class="order-area">
+	<view bindtap="navigateToOrder" class="order" data-status="0">
+		<image src="../../../images/001.png" />
+		<text>待付款</text>
+	</view>
+	<view bindtap="navigateToOrder" class="order" data-status="1">
+		<image src="../../../images/002.png" />
+		<text>待发货</text>
+	</view>
+	<view bindtap="navigateToOrder" class="order" data-status="2">
+		<image src="../../../images/003.png" />
+		<text>已发货</text>
+	</view>
+	<view bindtap="navigateToOrder" class="order" data-status="3">
+		<image src="../../../images/004.png" />
+		<text>已完成</text>
+	</view>
+</view>
+</view>
+<view bindtap="sign_in" class="tableviewcell">
+	<image src="../../../images/images/0007.png"  />  
+	<text>签到</text>
+  <image src="../../../images/tab_6.png"  style="width:10px;height:15px; position:absolute;right:50rpx;"/>
+</view>
+<view bindtap="red_envelope" class="tableviewcell">
+	<image src="../../../images/images/0004.png"  />
+	<text>我的红包</text>
+  <image src="../../../images/tab_6.png"  style="width:10px;height:15px; position:absolute;right:50rpx;"/>
+</view>
+<view bindtap="member" class="tableviewcell">
+	<image src="../../../images/images/0008.png"  />
+	<text>民生会员</text>
+  <image src="../../../images/tab_6.png"  style="width:10px;height:15px; position:absolute;right:50rpx;"/>
+</view>
+<!-- <view bindtap="navigateToOrder" class="tableviewcell">
+	<image src="../../../images/images/0001.png" />
+	<text>我的订单</text>
+  <image src="../../../images/tab_6.png"  style="width:10px;height:15px; position:absolute;right:50rpx;"/>
+</view> -->
+<view bindtap="navigateToAddress" class="tableviewcell">
+	<image src="../../../images/images/0002.png" />
+	<text>地址管理</text>
+  <image src="../../../images/tab_6.png"  style="width:10px;height:15px; position:absolute;right:50rpx;"/>
+</view>
+<!-- <view  class="tableviewcell" bindtap="phone">
+	<image src="../../../images/119.png" />
+	<text class="intergalstext">绑定手机</text>
+  <image src="../../../images/tab_6.png"  style="width:10px;height:15px; position:absolute;right:50rpx;"/>
+</view> -->
+<view bindtap="collect" class="tableviewcell">
+	<image src="../../../images/images/0003.png"  />
+	<text>我的收藏</text>
+  <image src="../../../images/tab_6.png"  style="width:10px;height:15px; position:absolute;right:50rpx;"/>
+</view>
+
+<view bindtap="" class="tableviewcell">
+	<image src="../../../images/images/0005.png"  />
+	<text>我的积分</text>
+  <text style="width:10px;height:15px; position:absolute;right:90rpx;color:red;">{{score}}</text>
+</view>
+<view bindtap="help" class="tableviewcell">
+	<image src="../../../images/images/0006.png" />
+	<text>帮助与反馈</text>
+  <image src="../../../images/tab_6.png"  style="width:10px;height:15px; position:absolute;right:50rpx;"/>
+</view>
+<view id="zhichi">  </view> 

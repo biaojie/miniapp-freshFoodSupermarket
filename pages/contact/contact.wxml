@@ -1,0 +1,11 @@
+<import src="../../utils/wxParse/wxParse.wxml"/> 
+<view class="page">
+
+    <!-- <map id="map" longitude="108.432105" latitude="22.884171" scale="16" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap"  bindregionchange="regionchange" show-location style="width: 100%; height: 300px;"></map> -->
+  <view style="padding-top:50rpx;">
+    <view class="news-details-content wxParse" style="color:#666;">
+    <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+    </view>
+</view>    
+</view>
+<view id="zhichi">  </view>

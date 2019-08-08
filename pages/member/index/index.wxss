@@ -1,0 +1,128 @@
+page {
+	background: #eee;
+  
+}
+.v{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.vip{
+  font-size:10px;background-color:#8F773B;padding:1rpx 5rpx;border-radius:5rpx;color:yellow;
+  margin-top: -10rpx;position: relative;height: 35rpx;
+}
+.bj_user{
+  height:250rpx;
+  width: 100%;
+}
+.bjimg{
+  height:250rpx;
+  width: 100%;
+  filter:blur(3px);
+
+}
+.tableviewcell image{
+  padding: 10rpx;
+}
+/*user info*/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 250rpx;
+  background: #fff;
+  
+ 
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  font-size: 30rpx;
+  color: gray;
+}
+
+/*menu list*/
+.tableviewcell {
+	padding: 20rpx 40rpx;
+	border-bottom: 1rpx solid #ddd;
+	color: #666;
+	background: white;
+	display: flex;
+	align-items: center;
+  position:relative;
+}
+
+/*icon*/
+.tableviewcell image {
+	width: 40rpx;
+	height: 40rpx;
+}
+
+/*text*/
+.tableviewcell text {
+	font-size: 15px;
+	margin-left:15px;
+}
+
+/*button*/
+.logout {
+	margin: 30rpx;
+}
+
+.tabsee {
+	padding: 20rpx 40rpx;
+	border-bottom: 1rpx solid #ddd;
+	color: #666;
+	background: white;
+	align-items: center;
+  position:relative;
+  font-size: 14px;
+}
+
+
+/*order*/
+.order-area {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 20rpx 0;
+}
+
+.order {
+	width: 33.3%;
+	text-align: center;
+}
+
+.order image {
+  box-sizing: border-box;
+  padding: 10rpx;
+	width: 90rpx;
+	height: 90rpx;
+}
+
+.order text{
+	display: block;
+	font-size: 30rpx;
+	color: #333;
+}
+.intergals{
+  color: red;
+padding-left: 52%;
+
+}
+.intergalstext{
+  width: 150rpx;
+}
+#zhichi{
+  text-align: center;
+  font-size: 9pt;
+ padding-top: 30rpx;
+color: #aaaaaa
+}

@@ -1,0 +1,26 @@
+<form bindsubmit="add">
+<view style='width:100%; height:70%; margin-top:15px; background:#fff;'>
+  <view class="input-list">
+    <view style='margin-top:10%;'>
+
+      <view class="input-item" style='border-top:1rpx solid #e8e8e8; border-bottom:1rpx solid #e8e8e8; margin-bottom:30px;'>
+        <view class="input-item-content">
+          <textarea maxlength="1000"  type="text" name="content" auto-focus placeholder="请填写您的反馈意见"/>
+         
+        </view>
+      </view>
+
+      <view class="input-item" style='border-top:1rpx solid #e8e8e8; border-bottom:1rpx solid #e8e8e8; margin-bottom:30px;'>
+        <view class="input-item-content">
+          <input type="text" name="contact" auto-focus placeholder="请输入您的联系方式(QQ、电话或邮箱)"></input>
+        </view>
+      </view>
+
+      <view class="input-item"  style=' margin-bottom:30px; padding:0px;'>
+        <button formType="submit" style='font-size:16px; line-height:1.9; background:#53aee1; padding-top:2px; padding-bottom:2px; width:100%; color:#fff;'>提 交</button>
+      </view>
+
+    </view>
+  </view>
+</view>
+</form>

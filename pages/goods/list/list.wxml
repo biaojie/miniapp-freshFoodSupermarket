@@ -1,0 +1,63 @@
+<form bindsubmit="search">
+<view class="search">
+     <view class="search-content">
+    <button formType="submit" style='border:1px solid rgba(0, 0, 0, 0);height:60rpx;background-color:#e3e3e3;line-height:24px;padding-left:0;'>
+          <image src="/images/search1.png"></image>
+    </button>
+		 
+		 <input placeholder-style="color:#999" name="name" bindinput="name" class="input_search" placeholder="搜索关键字"/>
+		 </view>
+</view>
+</form>
+
+
+<dl class="menu">
+	<dt data-index="0" bindtap="tapMainMenu" class="{{menu[0]}}">价格</dt>
+	<dd class="{{subMenuDisplay[0]}}">
+		<ul>
+			<li class="{{subMenuHighLight[0][0]}}" data-index="prd" bindtap="search">从高到低</li>
+			<li class="{{subMenuHighLight[0][1]}}" data-index="pra" bindtap="search">从低到高</li>
+			
+		</ul>
+	</dd>
+	<dt data-index="1" bindtap="tapMainMenu" class="{{menu[1]}}">销量</dt>
+	<dd class="{{subMenuDisplay[1]}}">
+		<ul>
+			<li class="{{subMenuHighLight[1][0]}}" data-index="countsd" bindtap="search">从多到少</li>
+			<li class="{{subMenuHighLight[1][1]}}" data-index="countsa" bindtap="search">从少到多</li>
+		</ul>
+	</dd>
+	<dt data-index="2" bindtap="tapMainMenu" class="{{menu[2]}}">最新</dt>
+	<dd class="{{subMenuDisplay[2]}}">
+		<ul>
+			<li class="{{subMenuHighLight[2][0]}}" data-index="idb" bindtap="search">最新</li>
+			<li class="{{subMenuHighLight[2][1]}}" data-index="ida" bindtap="search">非最新</li>
+		</ul>
+	</dd>
+	<!-- <dt data-index="3" bindtap="tapMainMenu" class="{{menu[3]}}">评价</dt> -->
+</dl>
+
+
+
+<view wx:if="{{!empty}}" class="goodsList carts-list">
+	<view wx:for="{{goods}}" wx:key="objectId" class="carts-item" data-goods_id="{{item.id}}" bindtap="tapGoods">
+		<view>
+		<!-- 缩略图 -->
+		  <image class="carts-image" src="{{baseUrl}}/public/uploads/{{item.file.savepath}}{{item.file.savename}}" mode="aspectFill" data-img="{{baseUrl}}/public/uploads/{{item.file.savepath}}{{item.file.savename}}"/>
+		</view>
+      <view class="carts-text">
+      	<!-- 商品标题 -->
+        <text class="carts-title">{{item.name}}</text>
+        <!-- 价格 -->
+          <text class="carts-price">￥{{item.price}}元</text>
+		<!-- 销量与评价 -->
+		<view class="goods-score">
+			<text>已售{{item.counts}}件</text>
+			<text catchtap="addCart" data-object-id="{{item.id}}" style="color:#f36;">加入购物车</text>
+		</view>
+      </view>
+    </view>
+</view>
+<view wx:else class="view-empty">
+<text>抱歉暂时没有相关结果,换个筛选条试试吧!</text>
+</view>

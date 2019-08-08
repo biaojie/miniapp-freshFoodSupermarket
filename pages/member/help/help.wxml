@@ -1,0 +1,15 @@
+<view style=' background-color: #ffffff;border-top:1rpx solid #e8e8e8; border-bottom:1rpx solid #e8e8e8; margin-bottom:15px; padding:8px 0;'>
+        <button bindtap="feed" style='font-size:16px; line-height:1.9; background:#53aee1; padding-top:2px; padding-bottom:2px; width:90%; color:#fff;'>我要反馈</button>
+</view>
+
+<text style="font-size:30rpx;color:#aaaaaa;margin-left:5%;">热点问题：</text>
+
+<view class="container" wx:for="{{list}}" wx:for-item="v" bindtap="details" data-uid="{{v.id}}" wx:key="">
+ <view class="news">
+      <view class="news_bt"> <text >{{v.title}}</text></view>
+      <image src="../../../images/tab_6.png"  style="width:10px;height:15px; position:absolute;right:50rpx;top:34rpx;"/>
+ </view>
+</view>
+
+
+<view id="zhichi">  </view>

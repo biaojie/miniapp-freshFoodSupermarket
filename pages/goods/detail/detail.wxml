@@ -1,0 +1,108 @@
+<import src="../../../utils/wxParse/wxParse.wxml" />
+
+
+<view class="class-tab">
+  <text bindtap="tabClick" data-index="0" class="{{tabClasss[0]}}">商品</text>
+  <text bindtap="tabClick" data-index="1" class="{{tabClasss[1]}}">详情</text>
+  <!-- <text bindtap="tabClick" data-index="2" class="{{tabClasss[2]}}">评价</text> -->
+</view>
+
+<view class="parent" wx:if="{{tab == 0}}">
+<swiper class="images" indicator-dots="true" autoplay="true" interval="5000" duration="1000" style="height:{{galleryHeight}}px;">
+  <block wx:for="{{goods.files}}" wx:key="" >
+    <swiper-item>
+      <image src="{{baseUrl}}/public/uploads/{{item.savepath}}{{item.savename}}" mode="aspectFill" class="swiper-image" bindtap="previewImage" data-current="{{baseUrl}}/public/uploads/{{item.savepath}}{{item.savename}}"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="view-class-title">
+    <view class="summary">
+      <text class="title">{{goods.name}}</text>
+    </view>
+    <view class="class-line">
+    </view>
+
+    <!-- <view bindtap="house" class="class-collect">
+      <image src="/images/collect.png"></image>
+    </view> -->
+  </view>
+<view style='background:#fff'>
+  <view class="view-price">
+    <text class="text-red">￥{{goods.price}}</text>
+    <text class="text-price">原价: ￥{{goods.old_price}} </text>
+    <text style='background-color: #FDE93C;box-sizing: border-box;padding: 3rpx 10rpx;border-radius: 10rpx;color: #1E1E1E;margin-left:15rpx;font-size:30rpx' class="hide{{goods.est==''||goods.est==null||goods.est==0.00?'':'show'}}">会员价：{{goods.est}}</text>
+  </view>
+  
+  <view class="view-other-info">
+    <text>库存:{{goods.store}}</text>
+    <text>单位:{{goods.unit}}</text>
+    <!-- <text>{{goods.goods.comment_count}}人评价</text> -->
+    <text>销量:{{goods.counts}}</text>
+  </view>
+</view>
+<view style='background:#ffffff;'>
+  <view class="rowline"></view>
+  <text class="text-prop">购买数量</text>
+  <!-- 数量加减 -->
+  <view style='background:#ffffff;padding-bottom:70px;'>
+    <view class="stepper">
+
+      <!-- 减号 -->
+      <text class="normal" bindtap="bindMinus">-</text>
+
+      <!-- 数值 -->
+      <input type="number" data-index="{{index}}" bindchange="bindManual" value="{{num}}" />
+
+      <!-- 加号 -->
+      <text class="normal" data-index="{{index}}" bindtap="bindPlus">+</text>
+    </view>
+  </view>
+  <view class="rowline"></view>
+</view>
+
+  
+</view>
+
+<!--商品详情-->
+<view class="parent" wx:if="{{tab == 1}}">
+<view class="detail">
+  <template is="wxParse" data="{{wxParseData:detail.nodes}}" />
+  <view id="zhichi">  </view>
+</view>
+</view>
+
+
+<view class="footer">
+
+    <view class="kf" bindtap="showCart" >
+      <image src="../../../images/icon_home.png" class="favor-image" />
+      <text class="favor-text">首页</text>
+    </view>
+
+    <view class="favor" bindtap="house">
+      <image src="../../../images/favorite.png" class="favor-image" />
+      <text class="favor-text">收藏</text>
+    </view>
+
+    <button class="add-cart" bindtap="addCart">加入购物车</button>
+    <button class="btn-bug" bindtap="buynow">立即购买</button>
+</view>
+
+<!-- 
+<view class="footer">
+  <view class="opt-buttons">
+ 
+    <view class="button-group" bindtap="house" style="border-left:3px solid #e5e5e5; padding-left: 40rpx;">
+      <image src="../../../images/favor.png" class="button-image" style="margin-left:-10rpx;width:50rpx;height:50rpx;margin-top:9rpx;"/>
+      <text class="button-text"style="margin-left:-10rpx;">收  藏</text>
+    </view>
+
+    <view class="button-group" bindtap="showCart"  >
+      <image src="../../../images/icon_home.png" class="button-image" style="margin-left:10rpx;"/>
+      <text class="button-text" style="margin-left:14rpx;">首页</text>
+    </view>
+
+  </view>
+  <button class="add-cart" bindtap="addCart" style="background-color: #ffe817;">加入购物车</button>
+  <button class="add-cart" bindtap="buynow" style="background-color: #f36;border-radius:4.px;">立即购买</button>
+</view> -->

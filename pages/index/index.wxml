@@ -1,0 +1,123 @@
+<!--搜索栏  -->
+<form bindsubmit="search">
+  <view class="view_search">
+    <view class="view_searchbg">
+
+      <input name="name" placeholder-style="color:#999999" class="input_search" placeholder="请输入您所搜索的商品" />
+      <view class="view1">
+        <view class="line"></view>
+        <button formType="submit" style='border:1px solid #ffffff;height:58rpx;background-color:#ffffff;line-height:35px;padding-left:0;'>
+          <image src="/images/search.png"></image>
+        </button>
+      </view>
+    </view>
+  </view>
+</form>
+
+
+
+<!--轮播图  -->
+<swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" style="height:{{wheight}}px;">
+  <block wx:for="{{banner}}" wx:key="banner">
+    <swiper-item>
+      <image src="{{baseUrl}}/public/uploads/{{item.file.savepath}}{{item.file.savename}}" data-id="{{item.goods_id}}" mode="aspectFill" class="swiper-image" bindtap="showGoods" />
+    </swiper-item>
+  </block>
+</swiper>
+<!-- /public/uploads/{{item.file.savepath}}{{item.file.savename}}
+<view style='background-image:url({{URL}}/public/uploads/{{gongneng[morens]["savepath"]}}{{gongneng[morens]["savename"]}}); background-size:100%' > -->
+<!--导航  -->
+
+<view class='midall'  style='background-image:url({{baseUrl}}/public/uploads/{{bjt[0]["file"]["savepath"]}}{{bjt[0]["file"]["savename"]}});background-size:100% 100%'>
+  <view class='mid' bindtap="showgoodsinfoall" wx:for="{{navbar}}" wx:key="" data-id="{{item.id}}">
+    <view class='midimg' wx:if="{{item.id == '42'}}" bindtap="showgoodsjifen">
+      <image src="{{item.img}}" class='img' style='border-radius: 180rpx;' />
+    </view>
+    <view wx:else class='midimg'>
+      <image src="{{item.img}}" mode="aspectFill" style='border-radius: 180rpx;' />
+    </view>
+    <view class='midname'>{{item.name}}</view>
+  </view>
+</view>
+
+
+
+
+
+<!--商品区  显示效果为横向滑块  -->
+<view class='one' wx:for="{{goods_labels}}" wx:for-item="v" wx:key="goods_labels" wx:if="{{v.type == '1'}}" >
+
+  <view class='oneheader'><image src='{{baseUrl}}/public/uploads/{{v.file_id.savepath}}{{v.file_id.savename}}' mode='aspectFill'/></view>
+  <scroll-view scroll-x='true' style="width:100%;">
+    <view class='uploadWrap'>
+      <view class='onebady' wx:for="{{v.goods}}" wx:key="" wx:for-item="vo" bindtap="showDetail" data-index="{{vo.id}}" scroll-x='true'>
+        <view class='onebadyimg'>
+          <image src='{{baseUrl}}/public/uploads/{{vo.file.savepath}}{{vo.file.savename}}' />
+        </view>
+        <view class='onebady_1'>
+          <view class='onebadytitle'>{{vo.name}}</view>
+          <view class='onebadysales'>销量：{{vo.counts}}</view>
+        </view>
+        <view class='onebady_2'>
+          <view class='onebadyprice'>￥{{vo.price}}元</view>
+          <view class="onebadymemberprice hide{{vo.est==''||vo.est==null||vo.est==0.00?'':'show'}}"><text>会员价:{{vo.est}}</text></view>
+          
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class='onefooter'><image src='{{baseUrl}}/public/uploads/{{v.file_id_db.savepath}}{{v.file_id_db.savename}}' /></view>
+
+</view>
+
+<!--商品区  一排三个  -->
+<view class='two' wx:for="{{goods_labels}}" wx:for-item="v1" wx:key="goods_labels1" wx:if="{{v1.type == '2'}}">
+  <view class='twoheader'><image src='{{baseUrl}}/public/uploads/{{v1.file_id.savepath}}{{v1.file_id.savename}}' mode='aspectFill'/></view>
+
+    <view class='twobady'>
+      <view class='twobadyall' wx:for="{{v1.goods}}" wx:key="" wx:for-item="vo1" bindtap="showDetail" data-index="{{vo1.id}}">
+        <view class='twobadyimg'><image src='{{baseUrl}}/public/uploads/{{vo1.file.savepath}}{{vo1.file.savename}}' /></view>
+        <view class='twobadytitle'>{{vo1.name}}</view>
+        <view class="twobadymemberprice hide{{vo1.est==''||vo1.est==null||vo1.est==0.00?'':'show'}}"><text>会员价:{{vo1.est}}</text></view>
+        <view class="twobadyactivityprice hide{{vo1.activity==''||vo1.activity==null||vo1.activity==0.00?'':'show'}}"><text>活动价:{{vo1.activity}}</text></view>
+        <view class='twobadyprice'>￥{{vo1.price}}元</view>
+
+      </view>
+    </view>
+
+</view>
+
+<!-- 商品区 显示效果为一排一个 -->
+<view class='three' wx:for="{{goods_labels}}" wx:for-item="v2" wx:key="goods_labels2" wx:if="{{v2.type == '3'}}">
+  <view class='threeheader'><image src='{{baseUrl}}/public/uploads/{{v2.file_id.savepath}}{{v2.file_id.savename}}' mode='aspectFill'/></view>
+  <view class='threefooter'><image src='{{baseUrl}}/public/uploads/{{v2.file_id_db.savepath}}{{v2.file_id_db.savename}}' mode='aspectFill'/></view>
+    <view class='threebady'>
+
+      <view class='threebadyall' wx:for="{{v2.goods}}" wx:key="" wx:for-item="vo2" bindtap="showDetail" data-index="{{vo2.id}}">
+        <view class='threebadyimg'><image src='{{baseUrl}}/public/uploads/{{vo2.file.savepath}}{{vo2.file.savename}}' /></view>
+        <view class='threebadyright'>
+          <view class='bmw'>
+            <view class='threebadytitle'>{{vo2.name}}</view>
+            <view class='threebadyIntroduction'>{{vo2.remark}}</view>
+          </view>
+          <view class='bmv'>
+            <view class="threebadymemberprice hide{{vo2.est==''||vo2.est==null||vo2.est==0.00?'':'show'}}"><text>会员价:{{vo2.est}}</text></view>
+            <view class="threebadyactivityprice hide{{vo2.activity==''||vo2.activity==null||vo2.activity==0.00?'':'show'}}"><text>会员价:{{vo2.activity}}</text></view>
+            <view class='threebadyprice'>￥{{vo2.price}}元</view>
+          </view>
+        </view> 
+      </view>
+
+    </view>
+</view>
+
+
+<image id="background-image" src="/images/phone.png"></image>
+
+<view class="connect">
+  <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+  <image src="/images/connect.png" bindtap="callme"></image>
+</view>
+
+
+<view id="zhichi">  </view>

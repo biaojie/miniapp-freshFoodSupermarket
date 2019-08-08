@@ -1,0 +1,41 @@
+<view style='width:100%; height:40px; margin-top:10px;background:#fff;'>
+  <!--字体居中-->
+  <view style='width:100%;float:left;padding-top:10px;padding-bottom:10px;text-align:center;'>手机号验证</view>
+</view>
+
+<view style='width:100%; height:70%; margin-top:15px; background:#fff;'>
+  <view class="input-list">
+    <view style='margin-top:20%;'>
+
+    <view wx:if="{{mobile > 0}}" class="input-item" style='border-top:1rpx solid #e8e8e8; border-bottom:1rpx solid #e8e8e8; margin-bottom:30px;'>
+        <text class="input-item-label">已绑手机号码</text>
+        <view class="input-item-content">
+          <input type="idcard" auto-focus value="{{mobile}}" disabled maxlength='11'></input>
+        </view>
+      </view>
+      
+      <view class="input-item" style='border-top:1rpx solid #e8e8e8; border-bottom:1rpx solid #e8e8e8; margin-bottom:30px;'>
+        <text class="input-item-label">手机号码</text>
+        <view class="input-item-content">
+          <input  type="idcard" auto-focus placeholder="请输入您的手机号码"  maxlength='11' bindinput="inputPhone" ></input>
+        </view>
+      </view>
+      <view class="input-item"  style='border-top:1rpx solid #e8e8e8; border-bottom:1rpx solid #e8e8e8; margin-bottom:30px;'>
+        <text class="input-item-label">验证码</text>
+        <view class="input-item-content" style='width:40%;'>
+          <view style='float:left;'>
+            <input type="text" auto-focus placeholder="请输入短信验证码" maxlength="6" bindinput="inputImgCode"></input>
+          </view>
+        </view>
+        <view bindtap="tel_sms" style='float:left; height:25px;  width:100px; text-align:center; color:#e10601; line-height:25px; font-size:12px;'>
+            {{verifyCodeTime}}
+        </view>
+      </view>
+      
+      <view class="input-item" bindtap="button"  style='border-top:1rpx solid #e8e8e8; border-bottom:1rpx solid #e8e8e8; margin-bottom:30px; padding:0px;'>
+        <button  style='font-size:16px; line-height:1.9; background:#53aee1; padding-top:2px; padding-bottom:2px; width:100%; color:#fff;'>提 交</button>
+      </view>
+
+    </view>
+  </view>
+</view>

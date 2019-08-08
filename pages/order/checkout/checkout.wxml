@@ -1,0 +1,177 @@
+
+<view class="tips">{{tips}}</view>
+<!--orderinfo{{cartIds}}{{amount}}-->
+
+<view class="parent">
+<view class="view-address" style="background:#ffffff;margin-top:10px;">
+<view class="view-addressleft">
+<image src="/images/icon_address.png"></image>
+
+<view class="view-addressleft-info" wx:if="{{addressList.length == 0}}">
+    <text class="text-add" style='margin-top:4rpx;' >收货地址</text>
+    <text class="area_select" bindtap="bindCreateNew">点击添加收获地址</text>
+
+</view>
+<view class="view-addressleft-info" wx:else>
+<text class="text-add">收货地址</text>
+	<picker bindchange="bindPickerChange" value="{{index}}" range="{{addressList}}">
+		{{addressList[addressIndex]}}
+	</picker>
+</view>
+</view>
+</view>
+
+<view class="view-address" style="background:#ffffff;height:94rpx;">
+<view class="view-addressleft" style='margin-left:69rpx;'>
+<view class="view-addressleft-info">
+<text class="text-name">联系人称: <text style='margin-left:10rpx;'>{{realname}}</text></text>
+</view>
+</view>
+</view>
+
+<view class="view-address" style="background:#ffffff;height:94rpx;">
+<view class="view-addressleft" style='margin-left:69rpx;'>
+<view class="view-addressleft-info">
+<text class="text-name">联系电话: <text style='margin-left:10rpx;'>{{tel}}</text></text>
+</view>
+</view>
+</view>
+
+<view class="view-address" style="background:#ffffff;height:94rpx;">
+<view class="view-addressleft" style='margin-left:69rpx;'>
+<view class="view-addressleft-info">
+<text class="text-name">可用积分: <text style='margin-left:10rpx;'>{{score}}</text></text>
+</view>
+</view>
+</view>
+
+<!-- <view class="cell" style='height:94rpx;' wx:if="{{config.s_date == ''}}">
+	<text style='margin-left:68rpx;'>配送日期:</text>
+	<picker mode="date" name="time" value="{{time}}" start="{{time}}" end="{{config.date}}"  bindchange="bindDateChange" style="width:50%">
+    <view class="picker" style="border:1px solid #fff;height:56rpx;color: #f30606;" >
+      {{date}}
+    </view>
+  </picker>
+</view>
+<view class="cell" style='height:94rpx;' wx:else>
+	<text style='margin-left:68rpx;'>配送日期:</text>
+	<picker mode="date" name="time" value="{{time}}" start="{{config.s_date}}" end="{{config.date}}"  bindchange="bindDateChange" style="width:50%">
+    <view class="picker" style="border:1px solid #fff;height:56rpx;color: #f30606;" >
+      {{date}}
+    </view>
+  </picker>
+</view>
+
+<view class="cell" style='height:94rpx;'>
+	<text style='margin-left:68rpx;'>配送时间:</text>
+	<picker mode="time" name="time" value="{{hour}}" start="{{config.start}}" end="{{config.end}}" bindchange="bindtime" style="width:50%">
+    <view class="picker" style="border:1px solid #fff;height:50rpx;color: #f30606;" >
+      {{shij}}
+    </view>
+  </picker>
+</view> -->
+
+<view class="view-address" style="background:#ffffff;height:94rpx;">
+<view class="view-addressleft" style='margin-left:69rpx;width:90%;'>
+<view class="view-addressleft-info">
+<text class="text-name">备注: </text>
+</view>
+<input type='text' style='border:1px solid #eee;margin-top:10rpx;margin-left:20rpx;height:64rpx;font-size:24rpx;width:65%;' bindchange="remarks" placeholder='请填写'></input>
+</view>
+</view>
+
+
+<view class="view-title">
+<image src="/images/icon_order.png"></image>
+<text>所选商品</text>
+</view>
+
+<view class="class-line"></view>
+
+<view class="container carts-list">
+   <view wx:for="{{good_dd}}"  wx:for-item="mapping" class="carts-item">
+    <view>
+      <image class="carts-image" src="{{baseUrl}}/public/uploads/{{mapping.goods.file.savepath}}{{mapping.goods.file.savename}}" mode="aspectFill" />
+    </view>
+    <view class="carts-text">
+      <text class="carts-title">{{mapping.goods.name}}</text>
+    </view>
+    <view class="carts-right">
+      <text class="text-red">￥{{mapping.goods.price}}</text>
+      <text class="text-price">x{{mapping.number}}</text>
+    </view>
+  </view> 
+</view>
+
+<view class="view-price">
+<!-- <view class="view-price1">
+   <text class="text-price1">邮费:</text>
+  <text class="text-red">￥{{psf}}元</text> 
+</view> -->
+<view class="view-price1">
+  <text class="text-price1">商品总金额:</text>
+  <text class="text-red">￥{{amount}}元</text> 
+</view>
+<!-- <view class="view-price1">
+  <text class="text-price1">合计:</text>
+  <text class="text-red">￥{{money}}元</text>
+</view> -->
+</view>
+</view>
+<view style='height:120rpx;'>
+<button  class='text-save' type="primary" bindtap="confirmOrder">提交订单</button>
+</view>
+
+
+
+
+
+
+<!--
+
+<view class="tips">{{tips}}</view>
+<view class="cell" wx:if="{{addressList.length == 0}}">
+	<text>地址:</text>
+	<text class="area_select" bindtap="bindCreateNew">收获地址</text>
+</view>
+<view class="cell" wx:else>
+	<text>地址:</text>
+	<picker bindchange="bindPickerChange" value="{{index}}" range="{{addressList}}">
+		{{addressList[addressIndex]}}
+	</picker>
+</view>
+<view class="cell">
+	<text>联系电话:</text>
+	<text>{{tel}}</text>
+</view>
+<view class="cell">
+	<text>选择日期:</text>
+	<picker mode="date" name="time" value="{{time}}" start="{{time}}"  bindchange="bindDateChange" style="margin:0">
+    <view class="picker" style="border:1px solid #fff;height:50rpx;" >
+      {{date}}
+    </view>
+  </picker>
+</view>
+<view class="cell">
+	<text>选择时间:</text>
+	<picker mode="time" name="time" value="{{hour}}" start="{{config.start}}" end="{{config.end}}" bindchange="bindtime" style="margin:0">
+    <view class="picker" style="border:1px solid #fff;height:50rpx;" >
+      {{shij}}
+    </view>
+  </picker>
+</view>
+<view class="cell">
+	<text>配送费:</text>
+	<text class="amount">{{psf}}</text>
+</view>
+<view class="cell">
+	<text>商品金额:</text>
+	<text class="amount">{{amount}}</text>
+</view>
+<view class="cell">
+	<text>总计:</text>
+	<text class="amount">{{money}}</text>
+</view>
+<button class="submit" type="primary" bindtap="confirmOrder">提交订单</button>
+<view id="zhichi">  </view>
+-->

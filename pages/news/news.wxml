@@ -1,0 +1,12 @@
+<view bindtap="showGoods" class="container" wx:for="{{list}}" wx:key="" wx:for-item="vo" data-uid="{{vo.id}}">
+ <view class="news">
+   <view class="news_left">
+      <view class="news_bt"> <text >{{vo.title}}</text></view>
+      <view class="news_cc"><text>{{vo.author}}</text></view>
+   </view>
+   <view class="news_right">
+     <image src="{{baseUrl}}/public/uploads/{{vo.savepath}}{{vo.savename}}" style="height:177rpx;width: 100%;"></image>
+   </view>
+ </view>
+</view>
+<view id="zhichi">  </view>

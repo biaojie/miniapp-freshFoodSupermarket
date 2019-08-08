@@ -1,0 +1,29 @@
+<view  style=' background-color: #ffffff;border-top:1rpx solid #e8e8e8; border-bottom:1rpx solid #e8e8e8; margin-bottom:15px; padding:8px 0;'>
+        <button bindtap="add" type="primary" style='font-size:16px; line-height:1.9; background:#53aee1; padding-top:2px; padding-bottom:2px; width:90%; color:#fff;'>添加地址</button>
+</view>
+<view class="address-list">
+	<view class="item" wx:for="{{addressObjects}}" wx:key="">
+		<!-- first row -->
+		<view class="header">
+			<text class="realname">{{item.realname}}</text>
+			<text class="mobile">{{item.mobile}}</text>
+		</view>
+		<!-- second row -->
+		<view class="summary">{{item.area}}{{item.detail}}</view>
+		<!-- third row -->
+		<view class="footer">
+			<!-- is default switch -->
+			<view class="set-default" data-index="{{index}}" bindtap="setDefault">
+				<!-- circle or success type -->
+				<icon type="{{item.isDefault == true ? 'success_circle' : 'circle'}}"/>
+				<text>默认地址</text>
+			</view>
+			<!-- edit and delete button -->
+			<view class="operation">
+				<view class="container" data-index="{{index}}" bindtap="edit"><image src="../../../images/icon_edit.png" /><text>编辑</text></view>
+				<view class="container" data-index="{{index}}" bindtap="delete"><image src="../../../images/icon_delete.png" /><text>删除</text></view>
+			</view>
+		</view>
+	</view>
+</view>
+<view id="zhichi">  </view>

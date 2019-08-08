@@ -1,0 +1,4 @@
+<text class="desc">
+	邀请朋友扫这个二维码分享。
+</text>
+<image src="https://www.ggmrx.com/addons/shuiguo/shop/api/GetQRCode?openId={{uid}}" mode="widthFix" />

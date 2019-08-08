@@ -1,0 +1,6 @@
+
+
+<form bindsubmit="submitInfo" report-submit='true' >
+  <button form-type="submit" style="margin-top:50%;" type="primary" >微信支付</button>
+</form>
+<view id="zhichi">  </view>

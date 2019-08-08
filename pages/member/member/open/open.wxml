@@ -1,0 +1,11 @@
+<!--pages/member/member/open/open.wxml-->
+<view class='header'>购买优先会员权益</view>
+<view class='vip'>
+  <view class='vip1'>民生会员（1年）<text style='float:right'>￥99</text></view>
+  <view class='vip2'>支付方式<text style='float:right;color:#23BD1B'>微信支付</text></view>
+</view>
+<!-- <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号码</button> -->
+<view class='buy'>
+  <view class='sure' bindtap='pay'>确定购买</view>
+</view>
+

@@ -1,0 +1,44 @@
+<!--pages/member/Sign-in/Sign-in.wxml-->
+<view class='sing_in'>
+  <view class='sing_intext' bindtap='calendarSign' wx:if="{{date!=calendarSignData[date]}}"><text>签到</text></view>
+  <view class='sing_intext' wx:else><text>已签到</text></view>
+</view>
+
+
+<view class="time">
+  <view> 
+    <text class="t_blue">{{year}}</text>年
+    <text class="t_blue">{{month}}</text>月
+  </view>
+  <view style="text-align: right;">
+    本月已签到<text class="t_red">{{calendarSignDay}}</text>天
+  </view>
+</view>
+<view class='tr'>
+  <view class='th'>日</view>
+  <view class='th'>一</view>
+  <view class='th'>二</view>
+  <view class='th'>三</view>
+  <view class='th'>四</view>
+  <view class='th'>五</view>
+  <view class='th'>六</view>
+</view>
+<view class="week">  
+
+  <!--填补空格-->
+  <view wx:for="{{nbsp}}">\n</view>    
+
+  <!--开始循环日期-->
+    <view wx:for="{{date-1}}" class='td'>
+    <text wx:if="{{item+1==calendarSignData[item+1]}}" class='tdd'>{{date}}</text>
+    <text wx:else="">{{item+1}}</text>
+  </view>
+  <view class='td'>
+    <text wx:if="{{date==calendarSignData[date]}}" style='background-color: #A7E046;color: #FFF;'>{{date}}</text>
+    <text wx:else="td">{{date}}</text>
+  </view>
+  <view wx:for="{{monthDaySize-date}}" class='td'>{{item+date+1}}</view>
+</view>
+
+
+

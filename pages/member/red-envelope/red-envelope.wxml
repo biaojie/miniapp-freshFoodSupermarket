@@ -1,0 +1,66 @@
+<!--pages/member/red-envelope/red-envelope.wxml-->
+<view class='nav'>
+  <view class='nav1' class="{{tabClasss[0]}}" bindtap="tabClick" data-index="0">未使用</view>
+  <view class='nav1' class="{{tabClasss[1]}} " bindtap="tabClick" data-index="1" >已过期</view>
+  <view class='nav1' class="{{tabClasss[2]}}" bindtap="tabClick" data-index="2">已使用</view>
+</view>
+
+<view wx:if="{{tab == 0}}" class='top'>
+  <view class="stamp stamp03">
+    <view class='left'>
+      <view class='lefttitle'>满100减5元</view>
+      <view class='lefttime'>有效期</view>
+      <view class='lefttime'><text style='color: #23BD1B;'>签到红包或新人红包</text></view>
+    </view>
+    <view class='right'>
+      <view class='rightmoney'><view class='hh'>5</view>元<view class='now' bindtap='now'>立即使用</view></view>
+    </view>
+  </view>
+  <view class="stamp stamp03">
+    <view class='left'>
+      <view class='lefttitle'>满150减10元</view>
+      <view class='lefttime'>有效期</view>
+    </view>
+    <view class='right'>
+      <view class='rightmoney'><view class='hh'>10</view>元<view class='now' bindtap='now'>立即使用</view></view>
+    </view>
+  </view>
+  <view class="stamp stamp03">
+    <view class='left'>
+      <view class='lefttitle'>满200减15元</view>
+      <view class='lefttime'>有效期</view>
+    </view>
+    <view class='right'>
+      <view class='rightmoney'><view class='hh'>15</view>元<view class='now' bindtap='now'>立即使用</view></view>
+    </view>
+  </view>
+
+</view>
+
+<view wx:if="{{tab == 1}}" class='top'>
+  <view class="stamp stamp03">
+    <view class='left'>
+      <view class='lefttitle'>满150减10元</view>
+      <view class='lefttime'>有效期</view>
+      <view class='ed'>已失效</view>
+    </view>
+    <view class='right'>
+      <view class='rightmoney'><view class='hh'>10</view>元</view>
+    </view>
+  </view>
+
+</view>
+
+<view wx:if="{{tab == 2}}" class='top'>
+  <view class="stamp stamp03">
+    <view class='left'>
+      <view class='lefttitle'>满200减15元</view>
+      <view class='lefttime'>有效期</view>
+      <view class='ed'>已失效</view>
+    </view>
+    <view class='right'>
+      <view class='rightmoney'><view class='hh'>15</view>元</view>
+    </view>
+  </view>
+
+</view>

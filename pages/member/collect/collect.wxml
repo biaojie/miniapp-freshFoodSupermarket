@@ -1,0 +1,21 @@
+
+<!--推荐栏目开始-->
+<view class="container-goods">
+
+  <view class="main-goods">
+
+    <view class="single-goods" wx:for="{{list}}" wx:for-item="v" wx:key=""  data-id="{{v.goods_id}}">
+      <image class="avatar" src="{{baseUrl}}/public/uploads/{{v.savepath}}{{v.savename}}" mode="aspectFill" bindtap="details"/>
+      <text class="title">{{v.name}}</text>
+
+      <view class="summary" style="  margin-bottom: 30rpx;">
+        <text class="price" style="margin:0;margin-left: 10rpx;">￥{{v.price}}</text>
+        <text class="sale" style="  margin:0;" bindtap="del" data-uid="{{v.id}}">取消收藏</text>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<view id="zhichi">  </view>
+<!--推荐栏目结束-->
